@@ -3,17 +3,17 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCOildZpNOcWuoJMqMZ38hBA08V7qgjjE",
-  authDomain: "line-clone-4b1f2.firebaseapp.com",
-  projectId: "line-clone-4b1f2",
-  storageBucket: "line-clone-4b1f2.firebasestorage.app",
-  messagingSenderId: "775404453581",
-  appId: "1:775404453581:web:360842825486fad91df384",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 // Firebase初期化前の追加設定
 if (window.location.hostname === "localhost") {
-  firebaseConfig.authDomain = "line-clone-4b1f2.firebaseapp.com";
+  firebaseConfig.authDomain = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
 }
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
